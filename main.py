@@ -1,20 +1,16 @@
+from question import questions
+
 print("welcome")
 
 score = 0
 
-answer1 = input("what language are we using? ")
+for item in questions:
+    answer = input(item["question"])
 
-if answer1.lower() == "python":
-    print("bravo")
-    score += 1
-
-answer2 = input("what command starts git? ")
-if answer1.lower() == "git init":
-    print("bravo")
-    score += 1
-
-
-else:
-    print("wrong")
+    if answer.lower() == item["answer"]:
+        print("correct")
+        score += 1
+    else:
+        print("wrong")
 
 print("your score is:", score)
